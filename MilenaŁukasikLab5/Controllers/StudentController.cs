@@ -12,7 +12,7 @@ namespace MilenaŁukasikLab5.Controllers
     [RoutePrefix("api/students")]
     public class StudentController : ApiController
     {
-        // GET: api/Student
+        [Route("GetAll")]
         [HttpGet]
         public IHttpActionResult GetAll()
         {
@@ -23,9 +23,8 @@ namespace MilenaŁukasikLab5.Controllers
             }
             return Ok(students);
         }
-
-        // GET: api/Student/5
-        [Route("{id:int}", Name = "GetStudent")]
+        
+        [Route("Get/{id:int}")]
         [HttpGet]
         public IHttpActionResult Get(int id)
         {
